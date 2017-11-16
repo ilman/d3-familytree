@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="googlebot" content="noindex, nofollow">
+
+	
+		
+			<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+		
+	
+		
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+		
+	
+		
+			<!--<script type="text/javascript" src="https://cdn.rawgit.com/ErikGartner/dTree/master/dist/dTree.js"></script>-->
+			<script type="text/javascript" src="dtree.js"></script>
+		
+	
+
+	<style type="text/css">
+		body {
+	font: 10px sans-serif;
+}
+
+.linage {
+	fill: none;
+	stroke: #000;
+}
+
+.marriage {
+	fill: none;
+	stroke: black;
+}
+
+.man {
+	background-color: lightblue;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.woman {
+	background-color: pink;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.emphasis {
+	font-style: italic;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+	</style>
+
+	<title>dTree Demo</title>
+
+	
+		
+
+
+
+
+<script type='text/javascript'>//<![CDATA[
+window.onload=function(){
+treeData = [{
+	"name": "Sofyan Wiradinata",
+	"nickname": "Ucup",
+	"gender": "man",
+	"textClass": "emphasis",
+	"marriages": [{
+		"spouse": {
+			"name": "Djuarsih",
+			"nickname": "Mimih",
+			"gender": "woman"
+		},
+		"children": [
+			{
+				"name": "Dedi Achmad Hidayat",
+				"nickname": "Dedi",
+				"gender": "man",
+				"marriages": [{
+					"spouse": {
+						"name": "Susilawati Wijaya",
+						"nickname": "Susi",
+						"gender": "woman"
+					},
+					"children": [{
+						"name": "R. Muchamad Darajat",
+						"nickname": "Sidi",
+						"gender": "man"
+					}, {
+						"name": "Muchamad Ilman Maulana",
+						"nickname": "Ilman",
+						"gender": "man"
+					}]
+				}]
+			},
+			{
+				"name": "Deni Djuanda",
+				"nickname": "Deni",
+				"gender": "man",
+				"marriages": [{
+					"spouse": {
+						"name": "Neneng",
+						"nickname": "Neneng",
+						"gender": "woman"
+					},
+					"children": [{
+						"name": "Deden",
+						"nickname": "Deden",
+						"gender": "man"
+					}, {
+						"name": "Rika",
+						"nickname": "Rika",
+						"gender": "woman"
+					}]
+				}]
+			},
+			{
+				"name": "Heri Moh Sahri",
+				"nickname": "Heri",
+				"gender": "man",
+				"marriages": [{
+					"spouse": {
+						"name": "Dewi",
+						"nickname": "Dewi",
+						"gender": "woman"
+					},
+					"children": [{
+						"name": "Andri",
+						"nickname": "Andri",
+						"gender": "man"
+					}, {
+						"name": "Bisya",
+						"nickname": "Bisya",
+						"gender": "woman"
+					}]
+				}]
+			}
+
+		]
+	}]
+}]
+
+
+
+dTree.init(treeData, {
+	target: "#graph",
+	debug: true,
+	height: 800,
+	width: 1200,
+	nodeWidth: 150,
+	callbacks: {
+		nodeClick: function(name, extra) {
+			console.log(name);
+		},
+		textRenderer(name, extra, textClass) {
+      var node = '';
+      if(typeof extra === 'undefined'){
+      	extra = {};
+      }
+      node += '<p align="center">\n';
+      node += extra.gender;
+      node += '</p>\n';
+      node += '<p align="center" class="' + textClass + '">\n';
+      node += name;
+      node += '</p>\n';
+      node += '<p align="center">\n';
+      node += '<small>' + extra.nickname + '</small>';
+      node += '</p>\n';
+      return node;
+    }
+	}
+});
+
+}//]]> 
+
+</script>
+
+	
+</head>
+
+<body>
+	<!DOCTYPE html>
+
+<body>
+	<h1>Demo</h1>
+	<div id="graph"></div>
+
+	<script>
+
+
+	</script>
+</body>
+
+</html>
+
+	
+	<script>
+	// tell the embed parent frame the height of the content
+	if (window.parent && window.parent.parent){
+		window.parent.parent.postMessage(["resultsFrame", {
+			height: document.body.getBoundingClientRect().height,
+			slug: "tpde0cer"
+		}], "*")
+	}
+</script>
+
+</body>
+
+</html>
+
